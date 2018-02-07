@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="clearfix">
+                                                      <div class="menu-primary-container">
+
+
+
+
+                                                      </div>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                                                    <br> <br>
+
+                                            </ul>
+                </div>
+                <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Login</div>
+
+                <div class="panel-body">
+                  <div class="form-group">
+                      <div class="col-md-8 col-md-offset-4">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                          <button type="submit" name="button" class="btn btn-primary">
+                              Login
+                          </button>
+
+
+                      </div>
+
+
+                                                            </div>
+                        </div>
+
+
+
+
+                        </div>
+                    </form>
+                    <div id="footer">
+                                                                                       <div id="copyrights">
+                                                                                         2017 © Infosec @ Paytm
+
+                                                                                       </div>
+                                                                                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

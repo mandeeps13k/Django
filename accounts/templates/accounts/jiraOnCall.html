@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="clearfix">
+                                                      <div class="menu-primary-container">
+
+
+
+
+                                                      </div>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                                                    <br> <br>
+
+                                            </ul>
+                </div>
+                <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Login</div>
+
+                <div class="panel-body">
+
+                        </div>
+
+                        
+                            <meta charset="utf-8">
+
+                            <style>
+                        thead {color:green;}
+                        tbody {color:blue;}
+                        tfoot {color:red;}
+
+                        table, th, td {
+                            border: 1px solid black;
+                        }
+                        </style>
+
+
+                            <table>
+                          <thead>
+                            <tr>
+                              <th>JIRA_ID</th>
+                              <th>SUMMARY</th>
+                              <th>STATUS</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+
+                              {% for item in list_jira_id %}
+                            <tr>
+                                <td>{{ item.key }}</td>
+                                <td>{{ item.fields.summary }}</td>
+                                <td>Under_Investigation</td>
+                              {% endfor %}
+                            </tr>
+
+                          </tbody>
+                        </table>
+
+
+
+
+
+
+
+                        </div>
+                    </form>
+                    <div id="footer">
+                                                                                       <div id="copyrights">
+                                                                                         2017 © Infosec @ Paytm
+
+                                                                                       </div>
+                                                                                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
