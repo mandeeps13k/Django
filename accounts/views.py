@@ -54,7 +54,7 @@ def register(request):
 def jiraOnCall(request):
 
     options = {
-    'server': 'https://jira.mypaytm.com'
+    'server': 'https://jira'
     }
 
     JIRA_USERNAME = ''
