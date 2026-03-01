@@ -1,5 +1,6 @@
 import psycopg2
 import json
+from psycopg2 import sql
 
 def lambda_handler(event, context):
     ssm = boto3.client('ssm')
@@ -24,9 +25,9 @@ def lambda_handler(event, context):
     language = event['translateTarget']
 
     cur = conn.cursor()
-    findQuery = '''SELECT file_name FROM {tableName} WHERE '{keyphrase}' = ANY (keyphrases) AND target_language = '{language}' AND username = '{username}' '''.format(username=username, keyphrase=keyphrase, language=language, tableName = tableName)
+    findQuery = sql.SQL('''SELECT file_name FROM {tableName} WHERE %s = ANY (keyphrases) AND target_language = %s AND username = %s ''').format(tableName=sql.Identifier(tableName))
     # ruleid: psycopg-sqli
-    cur.execute(findQuery)
+    cur.execute(findQuery, (keyphrase, language, username))
     result = cur.fetchone()
     returnList = []
 
