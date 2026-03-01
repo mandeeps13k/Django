@@ -2,7 +2,7 @@
 import os
 import sys
 
-secret = 'c7a7de5f6503d77a8920855a332c573360bdc924'
+secret = os.environ.get('APP_SECRET')
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "testProject.settings")
